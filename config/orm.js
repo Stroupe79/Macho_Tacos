@@ -14,6 +14,7 @@ function selectAll(){
     if (err) throw err;
     connection.query("SELECT * FROM tacos", function (err, res){
         console.log(res);
+        connection.end();
     })
 });
 };
