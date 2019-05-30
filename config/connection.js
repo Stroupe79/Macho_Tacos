@@ -7,10 +7,11 @@
 const mysql = require ("mysql");
 
 const connection = mysql.createConnection({
-DB_HOST="localhost",
-DB_USER="root",
-DB_PASS="root",
-DB_NAME="tacos_db"});
+HOST:'localhost',
+USER:'root',
+PASS:'root',
+PORT: 3308,
+NAME:'tacos_db'});
 
 
 module.exports = connection;

@@ -7,12 +7,15 @@
 //      * Export the ORM object in `module.exports`
 
 
-require ("connection.js");
+const connection = require ("./connection");
 
 function selectAll(){
+    connection.connect(function(err) {
+    if (err) throw err;
     connection.query("SELECT * FROM tacos", function (err, res){
         console.log(res);
     })
+});
 };
 
 
@@ -26,3 +29,5 @@ function updateOne(){
 
 
 }
+
+module.exports = selectAll();
