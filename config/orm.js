@@ -20,14 +20,22 @@ function selectAll(){
 
 
 function insertOne(){
-
-
+    connection.connect(function(err) {
+        if (err) throw err;
+        connection.query(`INSERT ${item} FROM tacos`, function (err, res){
+            console.log(res);
+        })
+    });
 };
 
 
 function updateOne(){
-
-
+    connection.connect(function(err) {
+        if (err) throw err;
+        connection.query(`UPDATE ${item} FROM tacos`, function (err, res){
+            console.log(res);
+        })
+    });
 }
 
 module.exports = selectAll();
