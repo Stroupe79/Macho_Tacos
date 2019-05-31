@@ -9,28 +9,27 @@
 
 const connection = require ("./connection");
 
-function selectAll(){
-    connection.connect(function(err) {
-    if (err) throw err;
-    connection.query("SELECT * FROM tacos", function (err, res){
-        console.log(res);
-        connection.end();
-    })
-});
-};
+module.exports = {
+    
+    selectAll : function (){
+    connection.query("SELECT * FROM tacos;", function(err, data) {
+        if (err) {
+        //   return res.status(500).end();
+        } return data;
+      });
+    },
 
-
-function insertOne(){
+    insertOne : function (){
     connection.connect(function(err) {
         if (err) throw err;
         connection.query(`INSERT ${item} FROM tacos`, function (err, res){
             console.log(res);
         })
     });
-};
+},
 
 
-function updateOne(){
+updateOne: function (){
     connection.connect(function(err) {
         if (err) throw err;
         connection.query(`UPDATE ${item} FROM tacos`, function (err, res){
@@ -38,5 +37,6 @@ function updateOne(){
         })
     });
 }
+};
 
-module.exports = selectAll();
+// exporting functions solution found at https://stackoverflow.com/questions/5797852/in-node-js-how-do-i-include-functions-from-my-other-files
