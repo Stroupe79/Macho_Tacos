@@ -22,7 +22,10 @@ app.use(express.json());
 
 app.get("/", function(req, res) {
 orm.selectAll;
+// console.log(data)
+console.log(orm.selectAll)
 res.render("index");
+
 });
   
 

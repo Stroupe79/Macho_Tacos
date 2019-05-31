@@ -6,18 +6,18 @@
 //      * 
 //      * Export the ORM object in `module.exports`
 
-
+const express = require ("express")
 const connection = require ("./connection");
 
 module.exports = {
     
-    selectAll : function (){
+    selectAll :
     connection.query("SELECT * FROM tacos;", function(err, data) {
         if (err) {
         //   return res.status(500).end();
-        } return data;
-      });
-    },
+        }
+        return data;
+      }),
 
     insertOne : function (){
     connection.connect(function(err) {
