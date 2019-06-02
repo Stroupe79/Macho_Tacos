@@ -15,18 +15,17 @@ app.use(express.static(path.join (__dirname + '/public')));
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
-// var taco = {
-//     name: "Monster",
-//     type: "Soft"
-// }
+var routes = require("./controllers/tacos_Controller.js");
 
-app.get("/", function(req, res) {
-orm.selectAll;
+app.use(routes);
+
+
+// app.get("/", function(req, res) {
+// orm.selectAll(function (data){
 // console.log(data)
-console.log(result)
-res.render("index", {taco: result[0].taco_name});
-
-});
+// res.render("index", {taco: data, type: data.shell});
+// });
+// });
   
 
 app.listen(PORT, function() {

@@ -5,5 +5,28 @@
 
 <h1>Macho Taco</h1>
 
-<p>Taco Name = {{taco}}</p>
+<ul>
+  {{#each tacos}}
+  {{/each}}
+</ul>
+
+<p>Taco Name = {{tacos}}</p>
 <p>Taco Shell Type = {{type}}</p>
+
+
+<h2>Add a Taco</h2>
+<form class="create-form">
+
+  <div class="form-group">
+    <label for="taco">Taco Name:</label>
+    <input type="text" id="taco" name="name">
+  </div>
+
+  <div class="form-group">
+    <label for="veg">Vegetarian?</label><br>
+    <input type="radio" name="veg" value="1" checked> Yes<br>
+    <input type="radio" name="veg" value="0"> No
+  </div>
+
+  <button type="submit">Add Taco</button>
+</form>

@@ -9,16 +9,28 @@
 const express = require ("express")
 const connection = require ("./connection");
 
+function printQuestionMarks(num) {
+    var arr = [];
+  
+    for (var i = 0; i < num; i++) {
+      arr.push("?");
+    }
+  
+    return arr.toString();
+  }
+  
+
 module.exports = {
     
-    selectAll :
+    selectAll : function (cb){
     connection.query("SELECT * FROM tacos;", function(err, data) {
         if (err) {
-        //   return res.status(500).end();
+          return res.status(500).end();
         }
-        result = data;
-        return data;
-      }),
+        cb(data);
+      });
+    },
+
 
     insertOne : function (){
     connection.connect(function(err) {
