@@ -5,29 +5,29 @@
 
 // 4. Create the `router` for the app, and export the `router` at the end of your file.
 
-
 const express = require ("express");
-var router = express.Router();
+const router = express.Router();
 const taco = require ("../models/tacos.js");
 
 router.get("/", function (req, res){
-    taco.all(function(data) {
-        var hbsObject = {
+  taco.all(function(data) {
+    var tacoArray = [];
+        tacoArray = {
           tacos: data
         };
-        console.log(hbsObject);
-        res.render("index", hbsObject);
+        console.log(tacoArray);
+        res.render("index", tacoArray);
       });
 
 })
 
 router.post("/api/tacos", function(req, res) {
-    taco.create([
-      "name", "veg"
+  console.log("test")
+    taco.insert([
+      "name", "shell", "veg"
     ], [
-      req.body.name, req.body.sleepy
+      req.body.name, req.body.shell, req.body.veg
     ], function(result) {
-      // Send back the ID of the new quote
       res.json({ id: result.insertId });
     });
   });
@@ -40,7 +40,7 @@ router.put("/api/tacos/:id", function(req, res) {
     console.log("condition", condition);
   
     taco.update({
-      veg: req.body.sleepy
+      veg: req.body.veg
     }, condition, function(result) {
       if (result.changedRows == 0) {
         // If no rows were changed, then the ID must not exist, so 404

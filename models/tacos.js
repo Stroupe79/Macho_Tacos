@@ -12,8 +12,8 @@ var taco = {
     });
   },
   // The variables cols and vals are arrays.
-  create: function(cols, vals, cb) {
-    orm.create("tacos", cols, vals, function(res) {
+  insert: function(cols, vals, cb) {
+    orm.create(cols, vals, function(res) {
       cb(res);
     });
   },

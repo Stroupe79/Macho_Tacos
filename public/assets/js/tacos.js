@@ -1,17 +1,17 @@
 // Make sure we wait to attach our handlers until the DOM is fully loaded.
 $(function() {
-    $(".change-sleep").on("click", function(event) {
+    $(".change-pickup").on("click", function(event) {
       var id = $(this).data("id");
-      var newSleep = $(this).data("newsleep");
+      var pickup = $(this).data("pickedup");
   
-      var newSleepState = {
-        sleepy: newSleep
+      var newPickup = {
+        gone: pickup
       };
   
       // Send the PUT request.
-      $.ajax("/api/cats/" + id, {
+      $.ajax("/api/tacos/" + id, {
         type: "PUT",
-        data: newSleepState
+        data: newPickup
       }).then(
         function() {
           console.log("changed sleep to", newSleep);
@@ -25,18 +25,19 @@ $(function() {
       // Make sure to preventDefault on a submit event.
       event.preventDefault();
   
-      var newCat = {
-        name: $("#ca").val().trim(),
-        sleepy: $("[name=sleepy]:checked").val().trim()
+      var newTaco = {
+        name: $("#taco").val().trim(),
+        shell: $("[name=shell:checked").val().trim,
+        veg: $("[name=veg]:checked").val().trim()
       };
   
       // Send the POST request.
-      $.ajax("/api/cats", {
+      $.ajax("/api/tacos", {
         type: "POST",
-        data: newCat
+        data: newTaco
       }).then(
         function() {
-          console.log("created new cat");
+          console.log("Taco Ordered");
           // Reload the page to get the updated list
           location.reload();
         }

@@ -7,6 +7,16 @@
 
 <ul>
   {{#each tacos}}
+  <li>
+	{{name}}
+
+	{{!-- <button class="change-sleep" data-id="{{id}}" data-newsleep="{{sleep}}">
+		{{#if sleep}}SLEEP TIME!{{else}}WAKE UP!{{/if}}
+	</button> --}}
+
+	<button class="pickup-taco" data-id="{{this.id}}">Picked up</button>
+</li>
+
   {{/each}}
 </ul>
 
@@ -20,6 +30,12 @@
   <div class="form-group">
     <label for="taco">Taco Name:</label>
     <input type="text" id="taco" name="name">
+  </div>
+
+  <div class="form-group">
+    <label for="shell">Shell Type:</label><br>
+    <input type="radio" name="shell" value="1" checked> Hard Shell<br>
+    <input type="radio" name="shell" value="0">Soft Shell
   </div>
 
   <div class="form-group">

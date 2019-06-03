@@ -20,7 +20,7 @@ function printQuestionMarks(num) {
   }
   
 
-module.exports = {
+var orm = {
     
     selectAll : function (cb){
     connection.query("SELECT * FROM tacos;", function(err, data) {
@@ -32,8 +32,8 @@ module.exports = {
     },
 
 
-    insertOne : function (){
-    connection.connect(function(err) {
+    create : function (cols, vals){
+    connection.connect('INSERT INTO tacos (' + cols + ') VALUES (' + vals + ');', function(err) {
         if (err) throw err;
         connection.query(`INSERT ${item} FROM tacos`, function (err, res){
             console.log(res);
@@ -52,4 +52,5 @@ updateOne: function (){
 }
 };
 
+module.exports = orm
 // exporting functions solution found at https://stackoverflow.com/questions/5797852/in-node-js-how-do-i-include-functions-from-my-other-files
