@@ -24,7 +24,7 @@ router.get("/", function (req, res){
 router.post("/api/tacos", function(req, res) {
   console.log("test")
     taco.insert([
-      "name", "shell", "veg"
+      "taco_name", "shell", "veg"
     ], [
       req.body.name, req.body.shell, req.body.veg
     ], function(result) {

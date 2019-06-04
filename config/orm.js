@@ -11,39 +11,39 @@ const connection = require ("./connection");
 
 function printQuestionMarks(num) {
     var arr = [];
-  
+    
     for (var i = 0; i < num; i++) {
-      arr.push("?");
+        arr.push("?");
     }
-  
+    
     return arr.toString();
-  }
-  
+}
+
 
 var orm = {
     
     selectAll : function (cb){
-    connection.query("SELECT * FROM tacos;", function(err, data) {
-        if (err) {
-          return res.status(500).end();
-        }
-        cb(data);
-      });
+        connection.query("SELECT * FROM tacos;", function(err, data) {
+            if (err) {
+                return res.status(500).end();
+            }
+            cb(data);
+            // connection.end();
+        });
     },
-
-
+    
+    
     create : function (cols, vals){
-    connection.connect('INSERT INTO tacos (' + cols + ') VALUES (' + vals + ');', function(err) {
+    connection.query("INSERT INTO tacos ('" + cols +"') VALUES ('" + vals + "');", function(err) {
         if (err) throw err;
-        connection.query(`INSERT ${item} FROM tacos`, function (err, res){
-            console.log(res);
-        })
+        // connection.query(`INSERT ${item} FROM tacos`, function (err, res){
+        
     });
 },
 
 
 updateOne: function (){
-    connection.connect(function(err) {
+    connection.query(function(err) {
         if (err) throw err;
         connection.query(`UPDATE ${item} FROM tacos`, function (err, res){
             console.log(res);
