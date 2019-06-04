@@ -7,10 +7,10 @@
 const mysql = require ("mysql");
 
 const connection = mysql.createConnection({
-host:'ff-ut.c72raecczwxn.us-east-1.rds.amazonaws.com',
-user:'user1',
-password:'user1',
-database:'tacos_db'});
+host:'us-cdbr-iron-east-02.cleardb.net',
+user:'b9fc9a8c78eb95',
+password:'854e8b3e',
+database:'heroku_01fc67f06bc0c28'});
 
 
 module.exports = connection;

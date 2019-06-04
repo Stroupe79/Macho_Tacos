@@ -2,9 +2,9 @@
 
 
 USE tacos_db;
-INSERT INTO tacos (taco_name, shell, veg, picked_up)
+INSERT INTO tacos (taco_name, veg, shell, picked_up)
 VALUES 
-("Monster Taco", "hard", false, false),
-("Johnny Taco", "hard", true, false),
-("Loopy Taco", "soft", false, false),
-("Guac Taco", "soft", true, false);
+("Monster Taco",  false, "hard", false),
+("Johnny Taco",  true, "hard", false),
+("Loopy Taco", false, "soft", false),
+("Guac Taco", true, "soft", false);
