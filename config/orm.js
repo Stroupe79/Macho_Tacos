@@ -57,7 +57,7 @@ var orm = {
     selectAll : function (cb){
         connection.query("SELECT * FROM tacos;", function(err, data) {
             if (err) {
-                return res.status(500).end();
+                // return res.status(500).end();
             }
             cb(data);
             // connection.end();
