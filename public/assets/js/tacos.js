@@ -27,10 +27,10 @@ $(function() {
   
       var newTaco = {
         name: $("#taco").val().trim(),
-        shell: $("[name=shell:checked").val().trim,
-        veg: $("[name=veg]:checked").val().trim()
+        shell: $("[name=shell]:checked").val(),
+        veg: $("[name=veg]:checked").val()
       };
-  
+      console.log(newTaco)
       // Send the POST request.
       $.ajax("/api/tacos", {
         type: "POST",
