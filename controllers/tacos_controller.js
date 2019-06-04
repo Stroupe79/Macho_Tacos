@@ -33,7 +33,7 @@ router.get("/", function(req, res) {
 router.post("/api/tacos", function(req, res) {
   console.log("test")
     taco.insert([
-      "taco_name", "shell", "veg"
+      "taco_name", "veg", "shell"
     ], [
       req.body.name, req.body.shell, req.body.veg
     ], function(result) {
