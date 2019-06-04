@@ -8,8 +8,8 @@ const mysql = require ("mysql");
 
 const connection = mysql.createConnection({
 host:'localhost',
-user:'root',
-password:'root',
+user:'b9fc9a8c78eb95',
+password:'854e8b3e',
 database:'tacos_db'});
 
 

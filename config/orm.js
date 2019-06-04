@@ -88,7 +88,6 @@ create: function( cols, vals, cb) {
       if (err) {
         throw err;
       }
-
       cb(result);
     });
   },
