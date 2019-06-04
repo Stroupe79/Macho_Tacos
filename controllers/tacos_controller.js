@@ -9,17 +9,26 @@ const express = require ("express");
 const router = express.Router();
 const taco = require ("../models/tacos.js");
 
-router.get("/", function (req, res){
-  taco.all(function(data) {
-    var tacoArray = [];
-        tacoArray = {
-          tacos: data
-        };
-        console.log(tacoArray);
-        res.render("index", tacoArray);
-      });
+// router.get("/", function (req, res){
+//   taco.all(function(data) {
+//     for (i=0; i<data.length; i++){
+//     console.log({taco:data[i].taco_name})
+//     };
+//       res.render("index", data);
+//     });
 
-})
+// });
+
+router.get("/", function(req, res) {
+  taco.all(function(data) {
+      const hbsObject = {
+          tacos: data
+      };
+      console.log(hbsObject);
+      res.render("index", hbsObject);
+  });
+});
+
 
 router.post("/api/tacos", function(req, res) {
   console.log("test")

@@ -8,20 +8,18 @@
 <ul>
   {{#each tacos}}
   <li>
-	{{name}}
+	<p><span class="label">Taco Name:</span> {{this.taco_name}}</p>
+      <p><span class="label">Shell:</span> {{this.shell}}</p>
+      <p><span class="label">Vegetarian:</span> {{this.veg}}</p>
 
-	{{!-- <button class="change-sleep" data-id="{{id}}" data-newsleep="{{sleep}}">
-		{{#if sleep}}SLEEP TIME!{{else}}WAKE UP!{{/if}}
-	</button> --}}
+      <button data-id="{{this.id}}" class="delTaco">Delete</button>
 
+      {{!-- <a href="/{{this.id}}">Update this taco</a> --}}
 	<button class="pickup-taco" data-id="{{this.id}}">Picked up</button>
 </li>
 
   {{/each}}
 </ul>
-
-<p>Taco Name = {{tacos}}</p>
-<p>Taco Shell Type = {{type}}</p>
 
 
 <h2>Add a Taco</h2>
@@ -34,8 +32,8 @@
 
   <div class="form-group">
     <label for="shell">Shell Type:</label><br>
-    <input type="radio" name="shell" value="1" checked> Hard Shell<br>
-    <input type="radio" name="shell" value="0">Soft Shell
+    <input type="radio" name="shell" value="Crunchy" checked> Crunchy Shell<br>
+    <input type="radio" name="shell" value="Soft">Soft Shell
   </div>
 
   <div class="form-group">

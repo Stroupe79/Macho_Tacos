@@ -44,15 +44,16 @@ $(function() {
       );
     });
   
-    $(".delete-cat").on("click", function(event) {
+    $(".delTaco").on("click", function(event) {
       var id = $(this).data("id");
+      console.log(id);
   
       // Send the DELETE request.
-      $.ajax("/api/cats/" + id, {
+      $.ajax("/api/tacos/" + id, {
         type: "DELETE"
       }).then(
         function() {
-          console.log("deleted cat", id);
+          console.log("deleted Taco", id);
           // Reload the page to get the updated list
           location.reload();
         }
