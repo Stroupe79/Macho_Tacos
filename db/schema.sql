@@ -14,8 +14,8 @@
      USE tacos_db;
      CREATE TABLE tacos (
          id INT (5) AUTO_INCREMENT PRIMARY KEY,
-         taco_name VARCHAR (50),
-         shell VARCHAR (6),
+         taco_name VARCHAR (100),
+         shell VARCHAR (10),
          veg BOOLEAN,
          picked_up BOOLEAN
      );
