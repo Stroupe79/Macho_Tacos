@@ -7,9 +7,9 @@
 const mysql = require ("mysql");
 
 const connection = mysql.createConnection({
-host:'localhost',
-user:'b9fc9a8c78eb95',
-password:'854e8b3e',
+host:'ff-ut.c72raecczwxn.us-east-1.rds.amazonaws.com',
+user:'user1',
+password:'user1',
 database:'tacos_db'});
 
 
