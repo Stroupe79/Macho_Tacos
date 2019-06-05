@@ -35,7 +35,7 @@ router.post("/api/tacos", function(req, res) {
     taco.insert([
       "taco_name", "veg", "shell"
     ], [
-      req.body.name, req.body.shell, req.body.veg
+      req.body.name, req.body.veg, req.body.shell
     ], function(result) {
       res.json({ id: result.insertId });
     });

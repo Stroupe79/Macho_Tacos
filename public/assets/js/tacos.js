@@ -27,8 +27,8 @@ $(function() {
   
       var newTaco = {
         name: $("#taco").val().trim(),
+        veg: $("[name=veg]:checked").val(),
         shell: $("[name=shell]:checked").val(),
-        veg: $("[name=veg]:checked").val()
       };
       console.log(newTaco)
       // Send the POST request.
